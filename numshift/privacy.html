@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — PapaG Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0c1021;
+            --surface: #151a2e;
+            --border: rgba(255,255,255,0.06);
+            --text: #c8ceda;
+            --text-dim: #6b7394;
+            --heading: #e8ecf4;
+            --accent-green: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-purple: #a78bfa;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Subtle grid texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        /* Header */
+        .studio-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .studio-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .studio-logo .papa { color: var(--accent-green); }
+        .studio-logo .g { color: var(--accent-blue); }
+        .studio-logo .studios { color: var(--text-dim); font-weight: 500; font-size: 0.85rem; margin-left: 0.15rem; }
+
+        .studio-nav {
+            margin-left: auto;
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .studio-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .studio-nav a:hover { color: var(--heading); }
+        .studio-nav a.active { color: var(--accent-green); }
+
+        /* Page title */
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--heading);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .effective-date {
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--accent-green);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover { border-bottom-color: var(--accent-green); }
+
+        /* Summary card */
+        .tldr {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .tldr-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .tldr p {
+            margin-bottom: 0;
+            font-size: 0.92rem;
+            color: var(--heading);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1.25rem 3rem; }
+            h1 { font-size: 1.4rem; }
+            .studio-nav { gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="studio-header">
+            <div class="studio-logo">
+                <span class="papa">Papa</span><span class="g">G</span>
+                <span class="studios">Studios</span>
+            </div>
+            <nav class="studio-nav">
+                <a href="/">Home</a>
+                <a href="/numshift/privacy.html" class="active">Privacy</a>
+                <a href="/numshift/support.html">Support</a>
+            </nav>
+        </header>
+
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective: March 29, 2026</p>
+
+        <div class="tldr">
+            <div class="tldr-label">TL;DR</div>
+            <p>Our games collect no personal data. We don't track you, sell your data, or show ads. Your scores stay on your device (or in Game Center if you opt in).</p>
+        </div>
+
+        <div class="section">
+            <h2>Who We Are</h2>
+            <p>PapaG Studios is an independent game studio. We build puzzle games for iOS. This policy covers all apps published by PapaG Studios on the Apple App Store.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data We Collect</h2>
+            <p>None. Our games do not collect, store, or transmit any personal information. We have no servers, no analytics, no tracking pixels, and no advertising SDKs.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data Stored on Your Device</h2>
+            <p>Our games store your preferences (sound, haptics) and local statistics (high score, games played) on your device using iOS standard storage. This data never leaves your device and is deleted when you uninstall the app.</p>
+        </div>
+
+        <div class="section">
+            <h2>Game Center</h2>
+            <p>Our games may integrate with Apple Game Center for leaderboards and achievements. If you are signed into Game Center, Apple handles your Game Center data according to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We do not access your Apple ID, real name, or any personal details through Game Center.</p>
+        </div>
+
+        <div class="section">
+            <h2>Third-Party Services</h2>
+            <p>Our games do not include any third-party analytics, advertising, or tracking services. We do not share data with anyone because we don't collect any.</p>
+        </div>
+
+        <div class="section">
+            <h2>Children's Privacy</h2>
+            <p>Our games do not collect personal information from anyone, including children under 13. Our apps are safe for all ages.</p>
+        </div>
+
+        <div class="section">
+            <h2>Changes to This Policy</h2>
+            <p>If we ever change this policy, we'll update the effective date at the top of this page. Since we don't collect your email, we can't notify you directly — but the current policy is always available here.</p>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Questions? Reach us at <a href="mailto:support@papagstudios.com">support@papagstudios.com</a> or visit our <a href="/numshift/support.html">support page</a>.</p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 PapaG Studios. All rights reserved.
+        </div>
+
+    </div>
+</body>
+</html>

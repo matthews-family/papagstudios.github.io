@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PapaG Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0c1021;
+            --surface: #151a2e;
+            --border: rgba(255,255,255,0.06);
+            --text: #c8ceda;
+            --text-dim: #6b7394;
+            --heading: #e8ecf4;
+            --accent-green: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-purple: #a78bfa;
+            --accent-amber: #fbbf24;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 5rem;
+            flex: 1;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 2.8rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-logo .papa { color: var(--accent-green); }
+        .hero-logo .g { color: var(--accent-blue); }
+
+        .hero-sub {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-top: 1.5rem;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Games section */
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .game-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .game-card:hover {
+            border-color: rgba(255,255,255,0.12);
+            transform: translateY(-1px);
+        }
+
+        .game-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .game-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .game-name .num { color: var(--accent-green); }
+        .game-name .shift { color: var(--accent-blue); }
+
+        .game-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .badge-coming {
+            color: var(--accent-amber);
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+
+        .game-desc {
+            font-size: 0.92rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .game-links {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .game-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--accent-green);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .game-links a:hover { border-bottom-color: var(--accent-green); }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact p {
+            font-size: 0.92rem;
+            color: var(--text-dim);
+        }
+
+        .contact a {
+            color: var(--accent-green);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact a:hover { border-bottom-color: var(--accent-green); }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 1;
+            padding: 1.5rem;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 2.5rem 1.25rem 3rem; }
+            .hero-logo { font-size: 2rem; }
+            .game-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="hero">
+            <div class="hero-logo">
+                <span class="papa">Papa</span><span class="g">G</span>
+            </div>
+            <div class="hero-sub">Studios</div>
+            <p class="hero-tagline">Independent games for iOS. Simple to learn, hard to put down, and zero tracking.</p>
+        </div>
+
+        <div class="section-label">Our Games</div>
+
+        <div class="game-card">
+            <div class="game-header">
+                <div class="game-name"><span class="num">Num</span><span class="shift">Shift</span></div>
+                <span class="game-badge badge-coming">Coming Soon</span>
+            </div>
+            <p class="game-desc">Slide entire rows and columns across a 5x5 board. When adjacent tiles sum to the target, they merge and you score. Easy to learn, fiendishly hard to master.</p>
+            <div class="game-links">
+                <a href="/numshift/support.html">Support</a>
+                <a href="/numshift/privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="contact">
+            <p>Questions? <a href="mailto:support@papagstudios.com">support@papagstudios.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        &copy; 2026 PapaG Studios. All rights reserved.
+    </div>
+</body>
+</html>

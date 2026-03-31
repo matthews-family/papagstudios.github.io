@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — PapaG Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0c1021;
+            --surface: #151a2e;
+            --border: rgba(255,255,255,0.06);
+            --text: #c8ceda;
+            --text-dim: #6b7394;
+            --heading: #e8ecf4;
+            --accent-green: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-purple: #a78bfa;
+            --accent-amber: #fbbf24;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        /* Header */
+        .studio-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .studio-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .studio-logo .papa { color: var(--accent-green); }
+        .studio-logo .g { color: var(--accent-blue); }
+        .studio-logo .studios { color: var(--text-dim); font-weight: 500; font-size: 0.85rem; margin-left: 0.15rem; }
+
+        .studio-nav {
+            margin-left: auto;
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .studio-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .studio-nav a:hover { color: var(--heading); }
+        .studio-nav a.active { color: var(--accent-green); }
+
+        /* Page title */
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--heading);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 0.92rem;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+
+        a {
+            color: var(--accent-green);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover { border-bottom-color: var(--accent-green); }
+
+        /* Game cards */
+        .game-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .game-card:hover { border-color: rgba(255,255,255,0.12); }
+
+        .game-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-title .num { color: var(--accent-green); }
+        .game-title .shift { color: var(--accent-blue); }
+
+        .game-desc {
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: var(--heading);
+            margin-bottom: 0.35rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-q::before {
+            content: 'Q';
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-amber);
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 4px;
+            padding: 0.1rem 0.35rem;
+            margin-right: 0.5rem;
+            vertical-align: 1px;
+        }
+
+        .faq-a {
+            font-size: 0.92rem;
+            padding-left: 2rem;
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p { margin-bottom: 0.4rem; font-size: 0.92rem; }
+
+        .section { margin-bottom: 2.5rem; }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1.25rem 3rem; }
+            h1 { font-size: 1.4rem; }
+            .studio-nav { gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="studio-header">
+            <div class="studio-logo">
+                <span class="papa">Papa</span><span class="g">G</span>
+                <span class="studios">Studios</span>
+            </div>
+            <nav class="studio-nav">
+                <a href="/">Home</a>
+                <a href="/numshift/privacy.html">Privacy</a>
+                <a href="/numshift/support.html" class="active">Support</a>
+            </nav>
+        </header>
+
+        <h1>Support</h1>
+        <p class="subtitle">Need help with one of our games? You're in the right place.</p>
+
+        <!-- Game: NumShift -->
+        <div class="game-card">
+            <div class="game-title"><span class="num">Num</span><span class="shift">Shift</span></div>
+            <p class="game-desc">A number puzzle game where you shift rows and columns to merge tiles that sum to the target. Think ahead, build combos, and climb the levels.</p>
+        </div>
+
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">How do I play NumShift?</div>
+                <p class="faq-a">Swipe on any row or column to slide the tiles. When adjacent tiles sum to the target number, they merge into a single tile worth that target. Each merge scores points and a new tile spawns. Fill the board with no merges possible and it's game over.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What do the tile colors mean?</div>
+                <p class="faq-a">Each tile value has its own color — lower values are cool blues and teals, higher values shift toward golds, reds, and purples. Tiles matching the current target have a pulsing glow so you can spot them at a glance.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How do combos work?</div>
+                <p class="faq-a">Make consecutive merges without a blank move and your combo multiplier climbs: 1.5x after two in a row, 2x after three, and 3x after four or more. The multiplier resets if you make a move with no merge.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How do levels work?</div>
+                <p class="faq-a">You start at Level 1 with a target of 5. As your score hits certain thresholds, you advance to higher levels with bigger targets (10, 15, 20). Higher levels also introduce tiles with larger starting values.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Can I undo a move?</div>
+                <p class="faq-a">Yes — tap the Undo button to reverse your last move. You get one undo at a time; it resets after each new move.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Is my data private?</div>
+                <p class="faq-a">Completely. We collect zero personal data. Your scores and settings are stored locally on your device. See our <a href="/numshift/privacy.html">privacy policy</a> for details.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">The app crashed or something looks wrong.</div>
+                <p class="faq-a">Sorry about that! Please email us with a description of what happened, your device model, and iOS version. Screenshots are always helpful. We'll investigate and fix it in the next update.</p>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-label">Get in Touch</div>
+            <p>Email: <a href="mailto:support@papagstudios.com">support@papagstudios.com</a></p>
+            <p>We typically respond within 48 hours.</p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 PapaG Studios. All rights reserved.
+        </div>
+
+    </div>
+</body>
+</html>
