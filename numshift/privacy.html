@@ -209,11 +209,11 @@
         </header>
 
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective: March 29, 2026</p>
+        <p class="effective-date">Effective: April 1, 2026</p>
 
         <div class="tldr">
             <div class="tldr-label">TL;DR</div>
-            <p>Our games collect no personal data. We don't track you, sell your data, or show ads. Your scores stay on your device (or in Game Center if you opt in).</p>
+            <p>Our games collect no personal data. We gather anonymous gameplay stats (scores, levels reached) to improve the game, but nothing is linked to your identity. We don't sell data or show ads.</p>
         </div>
 
         <div class="section">
@@ -223,7 +223,9 @@
 
         <div class="section">
             <h2>Data We Collect</h2>
-            <p>None. Our games do not collect, store, or transmit any personal information. We have no servers, no analytics, no tracking pixels, and no advertising SDKs.</p>
+            <p>Our games do not collect, store, or transmit any personal information. We do not know who you are, and we have no way to identify you.</p>
+            <p>We do collect anonymous gameplay analytics (such as scores, levels reached, and session duration) using Google Firebase Analytics. This data is aggregated and is not linked to your identity in any way. It helps us understand how players interact with the game so we can make it better.</p>
+            <p>You can opt out of analytics by disabling "Share Analytics" in your iOS Settings under Privacy &amp; Security &gt; Analytics &amp; Improvements.</p>
         </div>
 
         <div class="section">
@@ -238,7 +240,8 @@
 
         <div class="section">
             <h2>Third-Party Services</h2>
-            <p>Our games do not include any third-party analytics, advertising, or tracking services. We do not share data with anyone because we don't collect any.</p>
+            <p>Our games use Google Firebase Analytics to collect anonymous gameplay statistics. Firebase may collect device-level identifiers for analytics purposes, but this data is not used for advertising and is not linked to your personal identity. You can review <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a> for details.</p>
+            <p>Our games do not include any advertising SDKs or tracking pixels.</p>
         </div>
 
         <div class="section">
@@ -253,7 +256,7 @@
 
         <div class="section">
             <h2>Contact</h2>
-            <p>Questions? Reach us at <a href="mailto:support@papagstudios.com">support@papagstudios.com</a> or visit our <a href="/numshift/support.html">support page</a>.</p>
+            <p>Questions? Reach us at <a href="#" class="eml" data-u="support" data-d="papagstudios.com">support at papagstudios.com</a> or visit our <a href="/numshift/support.html">support page</a>.</p>
         </div>
 
         <div class="footer">
@@ -261,5 +264,12 @@
         </div>
 
     </div>
+    <script>
+    document.querySelectorAll('a.eml').forEach(function(el){
+        var a=el.dataset.u+'@'+el.dataset.d;
+        el.href='mailto:'+a;
+        el.textContent=a;
+    });
+    </script>
 </body>
 </html>

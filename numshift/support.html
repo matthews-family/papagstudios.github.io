@@ -308,7 +308,7 @@
 
         <div class="contact-card">
             <div class="contact-label">Get in Touch</div>
-            <p>Email: <a href="mailto:support@papagstudios.com">support@papagstudios.com</a></p>
+            <p>Email: <a href="#" class="eml" data-u="support" data-d="papagstudios.com">support at papagstudios.com</a></p>
             <p>We typically respond within 48 hours.</p>
         </div>
 
@@ -317,5 +317,12 @@
         </div>
 
     </div>
+    <script>
+    document.querySelectorAll('a.eml').forEach(function(el){
+        var a=el.dataset.u+'@'+el.dataset.d;
+        el.href='mailto:'+a;
+        el.textContent=a;
+    });
+    </script>
 </body>
 </html>

@@ -246,7 +246,7 @@
         </div>
 
         <div class="contact">
-            <p>Questions? <a href="mailto:support@papagstudios.com">support@papagstudios.com</a></p>
+            <p>Questions? <a href="#" class="eml" data-u="support" data-d="papagstudios.com">support at papagstudios.com</a></p>
         </div>
 
     </div>
@@ -254,5 +254,12 @@
     <div class="footer">
         &copy; 2026 PapaG Studios. All rights reserved.
     </div>
+    <script>
+    document.querySelectorAll('a.eml').forEach(function(el){
+        var a=el.dataset.u+'@'+el.dataset.d;
+        el.href='mailto:'+a;
+        el.textContent=a;
+    });
+    </script>
 </body>
 </html>
