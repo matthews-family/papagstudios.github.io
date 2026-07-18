@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% assign p = site.data.products | where: "slug", page.product | first %}
+<article class="product accent-{{ p.accent }}">
+  <div class="product-hero">
+    {% if page.key_art %}<img class="product-art" src="{{ page.key_art | relative_url }}" alt="{{ p.name }} key art">{% endif %}
+    <h1 class="product-name">{{ p.name }}</h1>
+    <p class="product-tagline">{{ p.tagline }}</p>
+    {% if p.status == 'live' %}<span class="pc-badge badge-live">Available Now</span>
+    {% else %}<span class="pc-badge badge-soon">Coming Soon</span>{% endif %}
+    <div class="product-cta">
+      {% if p.cta_url != "" %}<a class="cta-btn" href="{{ p.cta_url }}">{{ p.cta_label }}</a>
+      {% else %}<span class="cta-btn cta-disabled">{{ p.cta_label }}</span>{% endif %}
+    </div>
+  </div>
+
+  <p class="product-pitch">{{ page.pitch }}</p>
+
+  <div class="section-label">Features</div>
+  <ul class="feature-list">
+    {% for f in page.features %}
+    <li><span class="feat-title">{{ f.title }}</span><span class="feat-body">{{ f.body }}</span></li>
+    {% endfor %}
+  </ul>
+
+  {% if page.screenshots and page.screenshots.size > 0 %}
+  <div class="section-label">Screenshots</div>
+  <div class="shot-gallery">
+    {% for s in page.screenshots %}<img src="{{ s | relative_url }}" alt="{{ p.name }} screenshot">{% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="product-legal">
+    <a href="{{ p.slug | prepend: '/' | append: '/support/' | relative_url }}">Support</a>
+    <a href="{{ p.slug | prepend: '/' | append: '/privacy/' | relative_url }}">Privacy</a>
+  </div>
+</article>
