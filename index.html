@@ -2,28 +2,24 @@
 layout: default
 ---
 <div class="hero">
-    <img src="{{ '/images/logo-gaming.png' | relative_url }}" alt="PapaG Studios" class="hero-avatar">
-    <div class="hero-logo">
-        <span class="papa">Papa</span><span class="g">G</span>
-    </div>
-    <div class="hero-sub">Studios</div>
-    <p class="hero-tagline">Independent games for iOS. Simple to learn, hard to put down, and zero tracking.</p>
+  <img src="{{ '/images/logo-gaming.png' | relative_url }}" alt="PapaG Studios" class="hero-avatar">
+  <div class="hero-logo"><span class="papa">Papa</span><span class="g">G</span></div>
+  <div class="hero-sub">Studios</div>
+  <p class="hero-tagline">A small studio crafting delightful games and apps — built with care, without the tracking.</p>
 </div>
 
-<div class="section-label">Our Games</div>
+<section id="games" class="catalog">
+  <div class="section-label">Games</div>
+  {% assign games = site.data.products | where: "kind", "game" %}
+  {% for p in games %}{% include product-card.html product=p %}{% endfor %}
+</section>
 
-<div class="game-card">
-    <div class="game-header">
-        <div class="game-name"><span class="num">Num</span><span class="shift">Shift</span></div>
-        <span class="game-badge badge-coming">Coming Soon</span>
-    </div>
-    <p class="game-desc">Slide entire rows and columns across a 5x5 board. When adjacent tiles sum to the target, they merge and you score. Easy to learn, fiendishly hard to master.</p>
-    <div class="game-links">
-        <a href="/numshift/support.html">Support</a>
-        <a href="/numshift/privacy.html">Privacy Policy</a>
-    </div>
-</div>
+<section id="apps" class="catalog">
+  <div class="section-label">Apps</div>
+  {% assign apps = site.data.products | where: "kind", "app" %}
+  {% for p in apps %}{% include product-card.html product=p %}{% endfor %}
+</section>
 
-<div class="contact">
-    <p>Questions? <a href="#" class="eml" data-u="support" data-d="papagstudios.com">support at papagstudios.com</a></p>
-</div>
+<section class="promise-strip">
+  <p>🔒 Privacy-first, always. <a href="{{ '/promise/' | relative_url }}">Read our promise &rarr;</a></p>
+</section>

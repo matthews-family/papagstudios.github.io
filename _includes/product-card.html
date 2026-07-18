@@ -1,0 +1,10 @@
+{% assign p = include.product %}
+<a class="product-card accent-{{ p.accent }}" href="{% if p.has_page %}{{ p.slug | prepend: '/' | append: '/' | relative_url }}{% else %}#{% endif %}">
+  <div class="pc-head">
+    <span class="pc-name">{{ p.name }}</span>
+    {% if p.status == 'live' %}<span class="pc-badge badge-live">Available Now</span>
+    {% else %}<span class="pc-badge badge-soon">Coming Soon</span>{% endif %}
+  </div>
+  <p class="pc-tagline">{{ p.tagline }}</p>
+  <span class="pc-cta">{{ p.cta_label }} &rarr;</span>
+</a>

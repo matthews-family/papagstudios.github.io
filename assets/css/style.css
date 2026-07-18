@@ -220,3 +220,22 @@
 .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-dim); text-decoration: none; margin-left: 1.25rem; }
 .nav-links a:hover { color: var(--heading); }
 .footer-copy { margin-top: 0.4rem; }
+
+.catalog { margin-bottom: 2.5rem; }
+.product-card { display: block; text-decoration: none; color: inherit;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.75rem; margin-bottom: 1rem; transition: border-color .2s, transform .2s; }
+.product-card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-1px); }
+.pc-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: .6rem; }
+.pc-name { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.2rem; color: var(--heading); }
+.pc-tagline { font-size: .92rem; color: var(--text-dim); margin-bottom: 1rem; }
+.pc-cta { font-size: .82rem; font-weight: 500; }
+.pc-badge { font-family: 'JetBrains Mono', monospace; font-size: .65rem; font-weight: 700;
+  letter-spacing: .05em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 20px; }
+.badge-live { color: var(--accent-green); background: rgba(52,211,153,.1); border: 1px solid rgba(52,211,153,.25); }
+.badge-soon { color: var(--accent-amber); background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.2); }
+.accent-green .pc-cta { color: var(--accent-green); }
+.accent-blue .pc-cta { color: var(--accent-blue); }
+.accent-purple .pc-cta { color: var(--accent-purple); }
+.promise-strip { text-align: center; margin: 2.5rem 0; padding: 1.25rem; border: 1px solid var(--border); border-radius: 12px; }
+.promise-strip a { color: var(--accent-green); text-decoration: none; }
