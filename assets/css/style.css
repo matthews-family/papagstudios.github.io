@@ -206,6 +206,9 @@
             .container { padding: 2.5rem 1.25rem 3rem; }
             .hero-logo { font-size: 2rem; }
             .game-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .site-nav { padding: 1rem 1.25rem 0; }
+            .nav-links a { margin-left: 1rem; font-size: .75rem; }
+            .product-name { font-size: 1.6rem; }
         }
 
 .site-nav {
