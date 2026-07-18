@@ -70,10 +70,10 @@ Stand up Jekyll and move the existing site into layouts/includes **without chang
 
 - [ ] **Step 1: Add Gemfile and .gitignore**
 
-`Gemfile`:
+`Gemfile` (plain Jekyll — the `github-pages` gem pins old Jekyll incompatible with the installed Ruby 4.0; the site uses no custom plugins so GitHub Pages builds it identically server-side):
 ```ruby
 source "https://rubygems.org"
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll", "~> 4.3"
 gem "html-proofer", "~> 5.0"
 ```
 
