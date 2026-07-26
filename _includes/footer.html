@@ -1,0 +1,14 @@
+<footer class="footer">
+  <p>
+    Questions? <a href="#" class="eml" data-u="support" data-d="papagstudios.com">support at papagstudios.com</a>
+    &nbsp;·&nbsp; <a href="{{ '/promise/' | relative_url }}">Our Promise</a>
+  </p>
+  <p class="footer-copy">&copy; 2026 PapaG Studios. All rights reserved.</p>
+</footer>
+<script>
+document.querySelectorAll('a.eml').forEach(function(el){
+  var a=el.dataset.u+'@'+el.dataset.d;
+  el.href='mailto:'+a;
+  el.textContent=a;
+});
+</script>

@@ -1,0 +1,27 @@
+- slug: numshift
+  name: NumShift
+  kind: game
+  status: live
+  tagline: Slide rows and columns; merge tiles that sum to the target.
+  accent: green
+  cta_label: Available on the App Store
+  cta_url: "https://apps.apple.com/us/app/numshift/id6762235648"
+  has_page: true
+- slug: battlekeep
+  name: BattleKeep
+  kind: game
+  status: soon
+  tagline: Capture towers, stream troops, conquer the map — illustrated tower conquest.
+  accent: green
+  cta_label: Coming to the App Store
+  cta_url: ""
+  has_page: true
+- slug: abide
+  name: Abide
+  kind: app
+  status: soon
+  tagline: Scripture memory and a prayer journal — a calm, on-device faith toolset.
+  accent: blue
+  cta_label: Coming to the Mac App Store
+  cta_url: ""
+  has_page: true

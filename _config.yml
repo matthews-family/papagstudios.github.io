@@ -1,0 +1,14 @@
+title: PapaG Studios
+description: A small studio crafting delightful games and apps — built with care, without the tracking.
+url: "https://papagstudios.com"
+lang: en
+# Static, no gimmicks
+plugins: []
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - docs/
+  - README.md
+  - vendor/
+# Pretty URLs: /numshift.html -> /numshift/
+permalink: pretty
