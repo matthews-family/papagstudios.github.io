@@ -32,6 +32,7 @@ layout: default
   {% endif %}
 
   <div class="product-legal">
+    {% if p.has_guide %}<a href="{{ p.slug | prepend: '/' | append: '/guide/' | relative_url }}">Guide</a>{% endif %}
     <a href="{{ p.slug | prepend: '/' | append: '/support/' | relative_url }}">Support</a>
     <a href="{{ p.slug | prepend: '/' | append: '/privacy/' | relative_url }}">Privacy</a>
   </div>
