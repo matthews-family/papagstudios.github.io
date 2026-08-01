@@ -17,6 +17,23 @@ layout: default
 
   <p class="product-pitch">{{ page.pitch }}</p>
 
+  {% if page.whats_new %}
+  <div class="whats-new">
+    <div class="wn-head">
+      <span class="wn-label">What's New</span>
+      <span class="wn-meta">v{{ page.whats_new.version }} · {{ page.whats_new.date }}</span>
+    </div>
+    <ul class="wn-list">
+      {% for item in page.whats_new.items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% if page.whats_new.cta_url %}
+    <a class="wn-cta" href="{{ page.whats_new.cta_url }}">{{ page.whats_new.cta_label }}</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
   <div class="section-label">Features</div>
   <ul class="feature-list">
     {% for f in page.features %}
