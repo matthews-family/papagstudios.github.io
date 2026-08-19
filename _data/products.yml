@@ -16,6 +16,15 @@
   cta_label: Coming to the App Store
   cta_url: ""
   has_page: true
+- slug: solitaire
+  name: Solitaire
+  kind: game
+  status: soon
+  tagline: Classic Klondike — Draw 1, Draw 3, and daily challenges.
+  accent: green
+  cta_label: Coming to the App Store
+  cta_url: ""
+  has_page: true
 - slug: abide
   name: Abide
   kind: app
