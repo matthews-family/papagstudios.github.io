@@ -25,6 +25,15 @@
   cta_label: Coming to the App Store
   cta_url: ""
   has_page: true
+- slug: taghunt
+  name: TagHunt
+  kind: game
+  status: soon
+  tagline: License-plate hunting for road trips — US, Canada, Mexico, and territories.
+  accent: green
+  cta_label: Join the TestFlight beta
+  cta_url: "https://testflight.apple.com/join/VyY6haAt"
+  has_page: true
 - slug: abide
   name: Abide
   kind: app
