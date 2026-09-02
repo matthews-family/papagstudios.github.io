@@ -28,11 +28,11 @@
 - slug: taghunt
   name: TagHunt
   kind: game
-  status: soon
+  status: live
   tagline: License-plate hunting for road trips — US, Canada, Mexico, and territories.
   accent: green
-  cta_label: Join the TestFlight beta
-  cta_url: "https://testflight.apple.com/join/VyY6haAt"
+  cta_label: Available on the App Store
+  cta_url: "https://apps.apple.com/us/app/papag-taghunt/id6805674559"
   has_page: true
 - slug: abide
   name: Abide
