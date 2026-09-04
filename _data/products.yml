@@ -19,11 +19,11 @@
 - slug: solitaire
   name: Solitaire
   kind: game
-  status: soon
+  status: live
   tagline: Classic Klondike — Draw 1, Draw 3, and daily challenges.
   accent: green
-  cta_label: Coming to the App Store
-  cta_url: ""
+  cta_label: Available on the App Store
+  cta_url: "https://apps.apple.com/us/app/id6803191691"
   has_page: true
 - slug: taghunt
   name: TagHunt
